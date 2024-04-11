@@ -10,3 +10,12 @@ class UK:
         return f'{self.id} - {self.name} -  {self.houses}'
     def __repr__(self):
         return self.__str__()
+
+    def __eq__(self, other):
+        if isinstance(other, UK):
+            return (
+                    self.id == other.id and
+                    self.name == other.name and
+                    self.houses == other.houses
+            )
+        return False

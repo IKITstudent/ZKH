@@ -12,3 +12,14 @@ class Tenant:
 
     def __repr__(self):
         return self.__str__()
+
+    def __eq__(self, other):
+        if isinstance(other, Tenant):
+            return (
+                    self.id == other.id and
+                    self.name == other.name and
+                    self.phone == other.phone and
+                    self.FlatNumber == other.FlatNumber and
+                    self.HouseAddress == other.HouseAddress
+            )
+        return False

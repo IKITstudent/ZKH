@@ -11,3 +11,14 @@ class Flat:
 
     def __repr__(self):
         return self.__str__()
+
+    def __eq__(self, other):
+        if isinstance(other, Flat):
+            return (
+                    self.id == other.id and
+                    self.number == other.number and
+                    self.address == other.address and
+                    self.isOccupied == other.isOccupied and
+                    self.tenantId == other.tenantId
+            )
+        return False

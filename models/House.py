@@ -11,3 +11,14 @@ class House:
 
     def __repr__(self):
         return self.__str__()
+
+    def __eq__(self, other):
+        if isinstance(other, House):
+            return (
+                    self.id == other.id and
+                    self.street == other.street and
+                    self.houseNumber == other.houseNumber and
+                    self.flats == other.flats and
+                    self.uk_id == other.uk_id
+            )
+        return False

@@ -24,4 +24,5 @@ rF.save_item(item=flat1)
 f=rF.get_item(1)
 print(f)
 
-s.AddUserToHouse(user1, house)
+a=s.AddUserToHouse(user1, house)
+print(a)
