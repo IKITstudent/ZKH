@@ -4,6 +4,7 @@ class House:
         self.street = street
         self.houseNumber = house_number
         self.flats=[]
+    uk_id:int
 
     def __str__(self):
         return f'{self.id} - {self.street} -  {self.houseNumber} - {self.flats}'

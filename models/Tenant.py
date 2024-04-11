@@ -4,6 +4,9 @@ class Tenant:
         self.name = name
         self.phone = phone
 
+    FlatNumber:int
+    HouseAddress:str
+
     def __str__(self):
         return f'{self.id} - {self.name} -  {self.phone}'
 

@@ -1,7 +1,7 @@
-import House
+import models.House as h
 
 class UK:
-    def __init__(self, id:int,name:str,houses:[House]):
+    def __init__(self, id:int,name:str,houses:[h]):
         self.id=id
         self.name=name
         self.houses=houses
