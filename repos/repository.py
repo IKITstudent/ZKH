@@ -1,6 +1,6 @@
 import abc
 from abc import ABC, abstractmethod
-from models import *
+from models import Tenant,Flat,Bill, Demand, Service, UK, House
 
 class AbstractRepository(ABC):
     @abstractmethod
