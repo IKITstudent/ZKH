@@ -1,3 +1,7 @@
+import Tenant
+import repos.fake_repo as fr
+
+
 class Flat:
     def __init__(self, id:int, number:int, address:str):
         self.id=id
@@ -22,3 +26,8 @@ class Flat:
                     self.tenantId == other.tenantId
             )
         return False
+
+    def AddTenantToFlat(self, tenant: Tenant):
+        tenant.FlatNumber = self.number
+        fr.TenantRepository.save_item(tenant)
+        return "OK"

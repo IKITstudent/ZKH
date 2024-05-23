@@ -1,3 +1,8 @@
+import  Demand
+import House
+import  UK
+import repos.fake_repo as fr
+
 class Tenant:
     def __init__(self, id:int, name:str, phone:int):
         self.id=id
@@ -23,3 +28,17 @@ class Tenant:
                     self.HouseAddress == other.HouseAddress
             )
         return False
+
+    def SendDemand(self, text: str, houseId: int):
+        newDemand: Demand
+        house: House
+        uk: UK
+
+        house = fr.HouseRepository.get_item(houseId)
+        uk = fr.UKRepository.get_item(house.uk_id)
+
+        newDemand(tenant_id=self.id, text=text, house_Id=houseId, uk_id=uk.id, demand_type_id=1)
+
+        fr.DemandRepository.save_item(newDemand)
+
+        return "OK"

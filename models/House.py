@@ -1,3 +1,7 @@
+import Tenant
+import repos.fake_repo as fr
+
+
 class House:
     def __init__(self, id:int, street:str, house_number:str):
         self.id=id
@@ -22,3 +26,9 @@ class House:
                     self.uk_id == other.uk_id
             )
         return False
+
+    def AddUserToHouse(self, tenant: Tenant):
+        self.HouseAddress = self.street + ", " + self.houseNumber
+        fr.TenantRepository.save_item(tenant)
+        return "OK"
+

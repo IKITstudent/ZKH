@@ -1,3 +1,6 @@
+import repos.fake_repo as fr
+
+
 class Demand:
     def __init__(self, id:int, text:str,house_id:int,flat_id:int, tenant_id:int, UK_id:int, demand_type_id:int,demand_status_id:int):
         self.id=id
@@ -28,3 +31,8 @@ class Demand:
                     self.demand_status_id==other.demand_status_id
             )
         return False
+
+    def ChangeDemandStatus(self, newStatusId: int):
+        self.demand_status_id = newStatusId
+        fr.DemandRepository.save_item(self)
+        return "OK"
